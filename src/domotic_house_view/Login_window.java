@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package domotic_house_view;
-
+import domotic_house_model.Model;
 /**
  *
  * @author angmore
@@ -14,9 +14,11 @@ public class Login_window extends javax.swing.JFrame {
     /** 
      * Creates new form Login_window
      */
-    public Login_window() {
+    private static Model model;
+    public Login_window(Model m) {
+        model = m;
         initComponents();
-        controller = new controllerLoginWindow(this);
+        controller = new controllerLoginWindow(this,model);
     }
 
     /**
@@ -31,7 +33,7 @@ public class Login_window extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         light_button = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        heating = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -59,7 +61,12 @@ public class Login_window extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("jButton2");
+        heating.setText("HEATING");
+        heating.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                heatingActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("jButton3");
 
@@ -71,14 +78,14 @@ public class Login_window extends javax.swing.JFrame {
                 .addGap(75, 75, 75)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(light_button, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2)
+                    .addComponent(heating)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton2, jButton3, light_button});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {heating, jButton3, light_button});
 
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,13 +98,13 @@ public class Login_window extends javax.swing.JFrame {
                         .addGap(63, 63, 63)
                         .addComponent(light_button, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(39, 39, 39)
-                        .addComponent(jButton2)
+                        .addComponent(heating)
                         .addGap(37, 37, 37)
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButton2, jButton3, light_button});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {heating, jButton3, light_button});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -122,6 +129,10 @@ public class Login_window extends javax.swing.JFrame {
     private void light_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_light_buttonActionPerformed
         controller.process_light();
     }//GEN-LAST:event_light_buttonActionPerformed
+
+    private void heatingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_heatingActionPerformed
+        controller.process_heating();
+    }//GEN-LAST:event_heatingActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,13 +164,13 @@ public class Login_window extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Login_window().setVisible(true);
+                new Login_window(model).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton heating;
     private javax.swing.JButton jButton3;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;

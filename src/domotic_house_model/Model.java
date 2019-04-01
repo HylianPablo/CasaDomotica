@@ -4,7 +4,7 @@
  */
 package domotic_house_model;
 
-
+import java.awt.Color;
 /**
  * Modelo de la sala domótica de luces.
  * Práctica de Interacción Persona-Computadora.
@@ -17,6 +17,8 @@ public class Model {
     private Bulb[] bombillas;
     private int state;
     private String mode;
+    private int heat;
+    private Color color_heat;
     
     /**
     *Constructor de la clase Model. En el se crea un array de objetos Bulb 
@@ -29,6 +31,10 @@ public class Model {
         }
         state = -1;
         mode = "NONE";
+        
+        
+        heat = 20;
+        color_heat = Color.ORANGE;
     }
   
     /**
@@ -174,5 +180,41 @@ public class Model {
         for(int i = 0; i < 5; i++){
             bombillas[i].setEncendido(false);
         }
+    }
+    
+    
+    
+    /**
+     * Comprueba los grados a los que se encuetra la calefaccion del sistema.
+     * @return Entero entre 10  y 30
+     */
+    public int getHeat(){
+        return heat;
+    }
+    
+    
+    /**
+     * Establece la temperatura del sistema de calefaccion.
+     * @param h valor entero entre 10 y 30.
+     */
+    public void setHeat(int h){
+        heat = h;
+    }
+    
+    /**
+     * Comprueba el color al que se asocia la temperatura del sistema de 
+     * calefaccion.
+     * @return objeto color distindo de @code{NULL} 
+     */
+    public Color getColorHeat(){
+        return color_heat;
+    }
+    
+    /**
+     * Establece el color referido a la calefaccion.
+     * @param c Objeto tipo Color, que debe ser diferente de NULL.
+     */
+    public void setColorHeat(Color c){
+        color_heat = c;
     }
 }

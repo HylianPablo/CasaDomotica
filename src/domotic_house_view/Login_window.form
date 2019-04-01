@@ -65,7 +65,7 @@
                   <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="light_button" linkSize="3" min="-2" pref="458" max="-2" attributes="0"/>
-                      <Component id="jButton2" linkSize="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="heating" linkSize="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton3" linkSize="3" min="-2" pref="442" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -86,7 +86,7 @@
                           <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                           <Component id="light_button" linkSize="4" min="-2" pref="110" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                          <Component id="jButton2" linkSize="4" min="-2" max="-2" attributes="0"/>
+                          <Component id="heating" linkSize="4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                           <Component id="jButton3" linkSize="4" min="-2" pref="116" max="-2" attributes="0"/>
                       </Group>
@@ -121,10 +121,13 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="light_buttonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="heating">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jButton2"/>
+            <Property name="text" type="java.lang.String" value="HEATING"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="heatingActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton3">
           <Properties>

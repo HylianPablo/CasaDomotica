@@ -5,20 +5,25 @@
  */
 package domotic_house_view;
 import domotic_house.Main;
-
+import domotic_house_model.Model;
 /**
  *
  * @author angmore
  */
 public class controllerLoginWindow {
     private Login_window login_view;
+    private Model model;
     
-    public controllerLoginWindow(Login_window v){
+    public controllerLoginWindow(Login_window v, Model m){
         login_view = v;
     }
     
     public void process_light(){
         Main.getStateMachineLogin().lights();
+    }
+    
+    public void process_heating(){
+        Main.getStateMachineLogin().heating();
     }
     
     
