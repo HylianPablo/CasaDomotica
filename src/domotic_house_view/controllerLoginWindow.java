@@ -26,5 +26,9 @@ public class controllerLoginWindow {
         Main.getStateMachineLogin().heating();
     }
     
+    public void process_blinds(){
+        Main.getStateMachineLogin().blinds();
+    }
+    
     
 }

@@ -5,6 +5,7 @@
  */
 package domotic_house_view;
 import domotic_house_model.Model;
+import java.awt.Color;
 /**
  *
  * @author root
@@ -21,6 +22,23 @@ public class HeatingView extends javax.swing.JFrame {
         model = m;
         controlador=new HeatingController(this,m);
         initComponents();
+        temperature_text.setForeground(Color.GREEN);
+    }
+    
+    public void actInt(int n){
+        temperature_text.setText(Integer.toString(n)+"º C");
+        if(n>=10 && n<15){
+            temperature_text.setForeground(Color.BLUE);
+        }else if(n>=15 && n<=19){
+            temperature_text.setForeground(Color.CYAN);
+        }else if(n==20){
+            temperature_text.setForeground(Color.GREEN);
+        }
+        else if(n>=21 && n<25){
+            temperature_text.setForeground(Color.ORANGE);
+        }else{
+            temperature_text.setForeground(Color.RED);
+        }
     }
 
     /**
@@ -33,14 +51,15 @@ public class HeatingView extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        temperature_text = new javax.swing.JLabel();
         Heating_slider = new javax.swing.JSlider();
         exit_heting = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("HEATING SYSTEM");
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 48)); // NOI18N
-        jLabel1.setText("20º C");
+        temperature_text.setFont(new java.awt.Font("Lucida Grande", 0, 48)); // NOI18N
+        temperature_text.setText("20º C");
 
         Heating_slider.setMajorTickSpacing(1);
         Heating_slider.setMaximum(30);
@@ -53,6 +72,7 @@ public class HeatingView extends javax.swing.JFrame {
             }
         });
 
+        exit_heting.setBackground(new java.awt.Color(255, 51, 51));
         exit_heting.setText("EXIT");
         exit_heting.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,7 +88,7 @@ public class HeatingView extends javax.swing.JFrame {
                 .addContainerGap(342, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(temperature_text, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(514, 514, 514))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(Heating_slider, javax.swing.GroupLayout.PREFERRED_SIZE, 587, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -81,7 +101,7 @@ public class HeatingView extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(108, 108, 108)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(temperature_text, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 243, Short.MAX_VALUE)
                 .addComponent(Heating_slider, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(68, 68, 68)
@@ -105,7 +125,7 @@ public class HeatingView extends javax.swing.JFrame {
 
     private void Heating_sliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Heating_sliderStateChanged
     //TODO esto hay que terminarlo    
-    //controlador.slider(Heating_slider.getValue());
+    controlador.slider(Heating_slider.getValue());
     }//GEN-LAST:event_Heating_sliderStateChanged
 
     private void exit_hetingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exit_hetingActionPerformed
@@ -149,7 +169,7 @@ public class HeatingView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JSlider Heating_slider;
     private javax.swing.JButton exit_heting;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel temperature_text;
     // End of variables declaration//GEN-END:variables
 }

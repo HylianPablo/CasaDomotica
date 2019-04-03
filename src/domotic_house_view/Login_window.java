@@ -34,9 +34,10 @@ public class Login_window extends javax.swing.JFrame {
         jLayeredPane1 = new javax.swing.JLayeredPane();
         light_button = new javax.swing.JButton();
         heating = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        blinds = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("DOMOTIC HOUSE");
         setPreferredSize(new java.awt.Dimension(604, 816));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "DOMOTIC HOUSE", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 24))); // NOI18N
@@ -68,7 +69,12 @@ public class Login_window extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("jButton3");
+        blinds.setText("BLINDS");
+        blinds.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                blindsActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -79,13 +85,13 @@ public class Login_window extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(light_button, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(heating)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(blinds, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {heating, jButton3, light_button});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {blinds, heating, light_button});
 
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -100,11 +106,11 @@ public class Login_window extends javax.swing.JFrame {
                         .addGap(39, 39, 39)
                         .addComponent(heating)
                         .addGap(37, 37, 37)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(blinds, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {heating, jButton3, light_button});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {blinds, heating, light_button});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -133,6 +139,10 @@ public class Login_window extends javax.swing.JFrame {
     private void heatingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_heatingActionPerformed
         controller.process_heating();
     }//GEN-LAST:event_heatingActionPerformed
+
+    private void blindsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blindsActionPerformed
+        controller.process_blinds();
+    }//GEN-LAST:event_blindsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,8 +180,8 @@ public class Login_window extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton blinds;
     private javax.swing.JButton heating;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton light_button;

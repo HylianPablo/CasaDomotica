@@ -24,8 +24,9 @@ public class HeatingController {
         Main.getStateMachineLogin().start();
 
     }
-    public void slider(){
-        
+    public void slider(int n){
+        model.setHeating(n);
+        view.actInt(n);
     }
     
     

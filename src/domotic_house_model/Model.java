@@ -17,7 +17,7 @@ public class Model {
     private Bulb[] bombillas;
     private int state;
     private String mode;
-    private int heat;
+    private int heating;
     private Color color_heat;
     
     /**
@@ -33,7 +33,7 @@ public class Model {
         mode = "NONE";
         
         
-        heat = 20;
+        heating = 20;
         color_heat = Color.ORANGE;
     }
   
@@ -188,8 +188,8 @@ public class Model {
      * Comprueba los grados a los que se encuetra la calefaccion del sistema.
      * @return Entero entre 10  y 30
      */
-    public int getHeat(){
-        return heat;
+    public int getHeating(){
+        return heating;
     }
     
     
@@ -197,8 +197,8 @@ public class Model {
      * Establece la temperatura del sistema de calefaccion.
      * @param h valor entero entre 10 y 30.
      */
-    public void setHeat(int h){
-        heat = h;
+    public void setHeating(int h){
+        heating = h;
     }
     
     /**

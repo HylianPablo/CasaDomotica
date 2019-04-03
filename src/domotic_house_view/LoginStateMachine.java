@@ -55,10 +55,22 @@ public class LoginStateMachine {
         });
     }
     
+    public void blinds(){
+        current_state.setVisible(false);
+        // Queda eliminar
+        java.awt.EventQueue.invokeLater(new Runnable(){
+            public void run(){
+                current_state = new BlindsView(model);
+                current_state.setVisible(true);
+            }
+        });
+    }
+    
     
     //Este método debería poder usarse para todos las vistas
     public void stop(){
         current_state.dispose();
+        current_state=null;
         //current_state.setVisible(false);
     }
 }
