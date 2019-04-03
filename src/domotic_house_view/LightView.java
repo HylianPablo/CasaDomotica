@@ -15,19 +15,24 @@ import java.awt.Color;
  */
 public class LightView extends javax.swing.JFrame {
     public boolean active = false;
-    Model model = new Model();
-    LightController controlador=new LightController(this,model);
+    Model model;
+    LightController controlador;
     /**
      * Se crea la nueva vista, cargando las imágenes inicales de los botones.
      * Las partes de la derecha están desactivadas inicialmente.
      */
-    public LightView() {
+    public LightView(Model m) {
+        model = m;
+        controlador=new LightController(this,model);
         initComponents();
-        color_bulb1("GREY");
+        /*color_bulb1("GREY");
         color_bulb2("GREY");
         color_bulb3("GREY");
         color_bulb4("GREY");
-        color_bulb5("GREY");
+        color_bulb5("GREY");*/
+        for(int i=0;i<5;i++){
+            controlador.change_state(i);
+        }
         on_off.setEnabled(false);
         intensity.setEnabled(false);
         color_list.setEnabled(false);
@@ -46,6 +51,7 @@ public class LightView extends javax.swing.JFrame {
                     
                 }
             });
+        
         x.start();
         
     }
@@ -289,7 +295,7 @@ public class LightView extends javax.swing.JFrame {
         color_panel = new javax.swing.JEditorPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("SALA DOMÓTICA");
+        setTitle("LIGHTS SYSTEM");
         setLocation(new java.awt.Point(80, 63));
         setPreferredSize(new java.awt.Dimension(1150, 600));
         setResizable(false);
@@ -297,8 +303,9 @@ public class LightView extends javax.swing.JFrame {
 
         jPanel1.setPreferredSize(new java.awt.Dimension(1150, 600));
 
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("MODOS DE SELECCIÓN");
+        jLabel1.setText("LIGHTS");
 
         all_off.setText("ALL OF");
         all_off.addActionListener(new java.awt.event.ActionListener() {
@@ -376,12 +383,13 @@ public class LightView extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(all_off)
-                    .addComponent(ambiente, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lectura)
-                    .addComponent(all_on)
-                    .addComponent(back_from_view))
+                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(back_from_view, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(all_off)
+                        .addComponent(ambiente, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lectura)
+                        .addComponent(all_on)))
                 .addContainerGap())
         );
 
@@ -466,7 +474,7 @@ public class LightView extends javax.swing.JFrame {
                 .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bulb4)
                     .addComponent(bulb5, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
 
         jLayeredPane3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {bulb1, bulb2, bulb3, bulb4, bulb5});
@@ -573,7 +581,7 @@ public class LightView extends javax.swing.JFrame {
                         .addComponent(jLabel6)
                         .addComponent(color_list, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addContainerGap(105, Short.MAX_VALUE))
         );
 
         jLayeredPane4Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {IntNum, intensity, jLabel4});
@@ -605,7 +613,7 @@ public class LightView extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLayeredPane4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLayeredPane3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLayeredPane3, jLayeredPane4});
@@ -697,7 +705,6 @@ public class LightView extends javax.swing.JFrame {
     }//GEN-LAST:event_color_listActionPerformed
 
     private void intensityStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_intensityStateChanged
-        // TODO add your handling code here:
         controlador.intensidad(intensity.getValue());
     }//GEN-LAST:event_intensityStateChanged
 

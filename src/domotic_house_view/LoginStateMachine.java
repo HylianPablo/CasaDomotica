@@ -13,18 +13,21 @@ import javax.swing.JFrame;
 import domotic_house_model.Model;
 //import domotic_house_view.images;
 //import domotic_house_view_images.*;
+import domotic_house_model.Model;
 
 public class LoginStateMachine {
     private JFrame current_state;
+    private Model model;
     
     public LoginStateMachine(){
-        start(); 
+        model = new Model();
+        start();
     }
     
     void start(){
         java.awt.EventQueue.invokeLater(new Runnable(){
             public void run(){
-                current_state = new Login_window();
+                current_state = new Login_window(model);
                 current_state.setVisible(true);
             }
         });
@@ -35,15 +38,39 @@ public class LoginStateMachine {
         // Queda eliminar
         java.awt.EventQueue.invokeLater(new Runnable(){
             public void run(){
-                current_state = new LightView();
+                current_state = new LightView(model);
                 current_state.setVisible(true);
             }
         });
     }
     
+    public void heating(){
+        current_state.setVisible(false);
+        // Queda eliminar
+        java.awt.EventQueue.invokeLater(new Runnable(){
+            public void run(){
+                current_state = new HeatingView(model);
+                current_state.setVisible(true);
+            }
+        });
+    }
+    
+    public void blinds(){
+        current_state.setVisible(false);
+        // Queda eliminar
+        java.awt.EventQueue.invokeLater(new Runnable(){
+            public void run(){
+                current_state = new BlindsView(model);
+                current_state.setVisible(true);
+            }
+        });
+    }
+    
+    
     //Este método debería poder usarse para todos las vistas
-    public void stop_lights(){
+    public void stop(){
         current_state.dispose();
+        current_state=null;
         //current_state.setVisible(false);
     }
 }

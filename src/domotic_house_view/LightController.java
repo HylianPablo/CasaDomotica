@@ -305,7 +305,7 @@ public class LightController {
     }
     
     public void back_to_login(){
-        Main.getStateMachineLogin().stop_lights();
+        Main.getStateMachineLogin().stop();
         Main.getStateMachineLogin().start();
     }
 }
