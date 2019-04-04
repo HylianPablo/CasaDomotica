@@ -22,7 +22,10 @@ public class HeatingView extends javax.swing.JFrame {
         model = m;
         controlador=new HeatingController(this,m);
         initComponents();
+        temperature_text.setText(Integer.toString(model.getHeating()));
+        Heating_slider.setValue(model.getHeating());
         temperature_text.setForeground(Color.GREEN);
+        actInt(model.getHeating());
     }
     
     public void actInt(int n){

@@ -15,6 +15,7 @@ public class BlindsController {
     private Model model;
     private BlindsView view;
     
+    
     public BlindsController(BlindsView v, Model m){
         view=v;
         model=m;
@@ -25,4 +26,10 @@ public class BlindsController {
         Main.getStateMachineLogin().start();
 
     }
+    
+    public void blind(int i, int value){
+        model.setBlindValue(i, value);
+        view.intAct();
+    }
+    
 }

@@ -98,7 +98,7 @@
                               <Component id="jLayeredPane2" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="123" max="32767" attributes="0"/>
+                      <EmptySpace pref="129" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -112,7 +112,7 @@
                           <Component id="jLayeredPane4" linkSize="15" max="-2" attributes="0"/>
                           <Component id="jLayeredPane3" linkSize="15" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="87" max="32767" attributes="0"/>
+                      <EmptySpace pref="84" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -270,7 +270,7 @@
                               <Component id="bulb4" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="bulb5" linkSize="6" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="76" max="32767" attributes="0"/>
+                          <EmptySpace pref="89" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>

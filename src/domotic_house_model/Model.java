@@ -19,6 +19,9 @@ public class Model {
     private String mode;
     private int heating;
     private Color color_heat;
+    private int blind1_value;
+    private int blind2_value;
+    private int blind3_value;
     
     /**
     *Constructor de la clase Model. En el se crea un array de objetos Bulb 
@@ -35,6 +38,10 @@ public class Model {
         
         heating = 20;
         color_heat = Color.ORANGE;
+        
+        blind1_value = 100;
+        blind2_value = 100;
+        blind3_value = 100;
     }
   
     /**
@@ -210,11 +217,34 @@ public class Model {
         return color_heat;
     }
     
-    /**
-     * Establece el color referido a la calefaccion.
-     * @param c Objeto tipo Color, que debe ser diferente de NULL.
-     */
-    public void setColorHeat(Color c){
-        color_heat = c;
+    
+    
+    public void setBlindValue(int i, int value){
+        switch(i){
+            case 1:
+                blind1_value = value;
+                break;
+            case 2:
+                blind2_value = value;
+                break;
+            case 3:
+                blind3_value = value;
+                break;
+        }
+    }
+    
+    public int getBlindValue(int i){
+        switch(i){
+            case 1:
+                return blind1_value;
+                
+            case 2:
+                return blind2_value;
+                
+            case 3:
+                return blind3_value;
+                
+        }
+        return 0;
     }
 }
