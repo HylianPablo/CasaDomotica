@@ -26,13 +26,14 @@ public class BlindsView extends javax.swing.JFrame {
 
     
     public void intAct(){
-        
-        
             if(model.getBlindValue(1)%10 == 0 )
+                blind1.setValue(model.getBlindValue(1));
                 jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/blind/"+model.getBlindValue(1)+".png")));
             if(model.getBlindValue(2)%10 == 0 )
+                blind2.setValue(model.getBlindValue(2));
                 jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/blind/"+model.getBlindValue(2)+".png")));
-            if(model.getBlindValue(3)%10 == 0 )    
+            if(model.getBlindValue(3)%10 == 0 )
+                blind3.setValue(model.getBlindValue(3));
                 jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/blind/"+model.getBlindValue(3)+".png")));
     }   
     
