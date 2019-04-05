@@ -7,17 +7,23 @@ package domotic_house_view;
 import domotic_house_model.Model;
 import java.awt.Color;
 /**
- *
- * @author root
+ * Vista del termostato de la sala domótica.
+ * Práctica de Interacción Persona-Computadora.
+ * Universidad de Valladolid.
+ * @author Angel Moreno Calvo
+ * @author Pablo Martinez Lopez
  */
 public class HeatingView extends javax.swing.JFrame {
-
-    /**
-     * Creates new form HeatingView
-     */
-    
     Model model;
     HeatingController controlador;
+    
+    
+    /**
+     * Constructor de la vista del termostato.
+     * inicialmente la temperatura estara a 20 grados.
+     * Se necesita el modelo para poder guardar los estados.
+     * @param m modelo utilizado en la implementación.
+     */
     public HeatingView(Model m) {
         model = m;
         controlador=new HeatingController(this,m);
@@ -28,6 +34,13 @@ public class HeatingView extends javax.swing.JFrame {
         actInt(model.getHeating());
     }
     
+    
+    /**
+     * Realiza los cambios continuos asignados al texto referentes al color.
+     * 
+     * Por ejemplo si el slider baja de 20 pasara a un color azul.
+     * @param n valor de la temperatura.
+     */
     public void actInt(int n){
         temperature_text.setText(Integer.toString(n)+"º C");
         if(n>=10 && n<15){
@@ -42,6 +55,10 @@ public class HeatingView extends javax.swing.JFrame {
         }else{
             temperature_text.setForeground(Color.RED);
         }
+    }
+    
+    public int getIntensity(){
+        return Heating_slider.getValue();
     }
 
     /**
@@ -77,7 +94,7 @@ public class HeatingView extends javax.swing.JFrame {
         });
 
         exit_heting.setBackground(new java.awt.Color(255, 51, 51));
-        exit_heting.setText("EXIT");
+        exit_heting.setText("Back");
         exit_heting.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exit_hetingActionPerformed(evt);
@@ -136,46 +153,14 @@ public class HeatingView extends javax.swing.JFrame {
 
     private void Heating_sliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Heating_sliderStateChanged
     //TODO esto hay que terminarlo    
-    controlador.slider(Heating_slider.getValue());
+    controlador.slider(/*Heating_slider.getValue()*/);
     }//GEN-LAST:event_Heating_sliderStateChanged
 
     private void exit_hetingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exit_hetingActionPerformed
         controlador.back_to_login();
     }//GEN-LAST:event_exit_hetingActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    /*
-    public static void main(String args[]) {
-        
-        
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HeatingView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HeatingView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HeatingView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HeatingView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        
-
-        
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new HeatingView(model).setVisible(true);
-            }
-        });
-    }
-*/
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JSlider Heating_slider;
