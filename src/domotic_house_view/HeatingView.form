@@ -40,19 +40,22 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace pref="342" max="32767" attributes="0"/>
+                  <EmptySpace pref="343" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="temperature_text" min="-2" pref="143" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="514" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="Heating_slider" min="-2" pref="587" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="299" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="2" attributes="0">
+                              <Component id="jLabel1" alignment="2" min="-2" max="-2" attributes="0"/>
+                              <Component id="temperature_text" alignment="2" min="-2" pref="240" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="472" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="exit_heting" min="-2" pref="157" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="518" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="519" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="Heating_slider" min="-2" pref="587" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="298" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -61,13 +64,15 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="94" max="-2" attributes="0"/>
+                  <EmptySpace pref="68" max="32767" attributes="0"/>
                   <Component id="temperature_text" min="-2" pref="82" max="-2" attributes="0"/>
-                  <EmptySpace pref="243" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
                   <Component id="Heating_slider" min="-2" pref="59" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                   <Component id="exit_heting" min="-2" pref="69" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -76,7 +81,7 @@
         <Component class="javax.swing.JLabel" name="temperature_text">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Lucida Grande" size="48" style="0"/>
+              <Font name="Lucida Grande" size="60" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="20&#xba; C"/>
           </Properties>
@@ -103,6 +108,14 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exit_hetingActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="48" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="HEATING"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

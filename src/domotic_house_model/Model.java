@@ -33,7 +33,7 @@ public class Model {
             bombillas[i] = new Bulb();
         }
         state = -1;
-        mode = "NONE";
+        mode = "ALL_OFF";
         
         
         heating = 20;

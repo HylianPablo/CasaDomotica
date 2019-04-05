@@ -185,7 +185,7 @@ public class LightController {
         else if(mode_lectura())
             model.setMode("LECTURA");
         else
-            model.setMode("NONE");
+            model.setMode("CUSTOM");
         view.change_color_button();
             
     }
