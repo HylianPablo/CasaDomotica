@@ -28,7 +28,7 @@ public class BlindsController {
     }
     
     public void blind(int i, int value){
-        model.setBlindValue(i, value);
+        model.setBlindValue(i ,value);
         view.intAct();
     }
     
