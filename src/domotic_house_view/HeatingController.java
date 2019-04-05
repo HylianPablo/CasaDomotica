@@ -42,7 +42,8 @@ public class HeatingController {
      * Cambia el valor del slider
      * @param n 
      */
-    public void slider(int n){
+    public void slider(/*int n*/){
+        int n=view.getIntensity();
         model.setHeating(n);
         view.actInt(n);
     }

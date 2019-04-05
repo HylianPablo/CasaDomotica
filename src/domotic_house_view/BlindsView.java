@@ -43,6 +43,18 @@ public class BlindsView extends javax.swing.JFrame {
             jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/blind/"+valor3+".png")));    
     }
     
+    public int getIntensity1(){
+        return blind1.getValue();
+    }
+    
+    public int getIntensity2(){
+        return blind2.getValue();
+    }
+    
+    public int getIntensity3(){
+        return blind3.getValue();
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -184,15 +196,15 @@ public class BlindsView extends javax.swing.JFrame {
     }//GEN-LAST:event_exit_from_blindsActionPerformed
 
     private void blind1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_blind1StateChanged
-        controller.blind(1, blind1.getValue());
+        controller.blind1(/*1, blind1.getValue()*/);
     }//GEN-LAST:event_blind1StateChanged
 
     private void blind2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_blind2StateChanged
-        controller.blind(2, blind2.getValue());
+        controller.blind2(/*2, blind2.getValue()*/);
     }//GEN-LAST:event_blind2StateChanged
 
     private void blind3StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_blind3StateChanged
-        controller.blind(3, blind3.getValue());
+        controller.blind3(/*3, blind3.getValue()*/);
     }//GEN-LAST:event_blind3StateChanged
 
 

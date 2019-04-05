@@ -127,7 +127,6 @@ public class Login_window extends javax.swing.JFrame {
             }
         });
 
-        exit.setBackground(new java.awt.Color(255, 51, 51));
         exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/exit.png"))); // NOI18N
         exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -260,7 +259,7 @@ public class Login_window extends javax.swing.JFrame {
                             .addComponent(bulb4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bulb5)))
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {blinds, exit, heating, light_button});
@@ -280,7 +279,7 @@ public class Login_window extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 788, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 657, Short.MAX_VALUE))
         );
 
         pack();

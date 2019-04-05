@@ -56,6 +56,10 @@ public class HeatingView extends javax.swing.JFrame {
             temperature_text.setForeground(Color.RED);
         }
     }
+    
+    public int getIntensity(){
+        return Heating_slider.getValue();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -149,7 +153,7 @@ public class HeatingView extends javax.swing.JFrame {
 
     private void Heating_sliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Heating_sliderStateChanged
     //TODO esto hay que terminarlo    
-    controlador.slider(Heating_slider.getValue());
+    controlador.slider(/*Heating_slider.getValue()*/);
     }//GEN-LAST:event_Heating_sliderStateChanged
 
     private void exit_hetingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exit_hetingActionPerformed

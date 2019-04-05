@@ -27,7 +27,23 @@ public class BlindsController {
 
     }
     
-    public void blind(int i, int value){
+    public void blind1(/*int i, int value*/){
+        int i=1;
+        int value=view.getIntensity1();
+        model.setBlindValue(i ,value);
+        view.intAct();
+    }
+    
+    public void blind2(/*int i, int value*/){
+        int i=2;
+        int value=view.getIntensity2();
+        model.setBlindValue(i ,value);
+        view.intAct();
+    }
+    
+    public void blind3(/*int i, int value*/){
+        int i=3;
+        int value=view.getIntensity3();
         model.setBlindValue(i ,value);
         view.intAct();
     }
