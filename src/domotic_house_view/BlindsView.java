@@ -1,21 +1,25 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+ * Contenido en el paquete que agrupa los componentes de la vista de la casa domótica.
+ * Se importa la clase Model con el fin de acceder al modelo.
+*/
 package domotic_house_view;
 
 import domotic_house_model.Model;
 
 /**
- *
- * @author root
+ * Vista de las persianas de la sala domótica.
+ * Práctica de Interacción Persona-Computadora.
+ * Universidad de Valladolid.
+ * @author Pablo Martínez López
+ * @author Ángel Moreno Calvo
  */
 public class BlindsView extends javax.swing.JFrame {
     private static Model model;
     BlindsController controller;
+    
     /**
-     * Creates new form BlindsView
+     * Se crea la nueva vista, cargando las imágenes inicales.
+     * Inicialmente se encuentran cerradas.
      */
     public BlindsView(Model m) {
         model=m;
@@ -24,7 +28,9 @@ public class BlindsView extends javax.swing.JFrame {
         intAct();
     }
 
-    
+    /**
+     * Cambio por parte de las imagenes a traves del modelo.
+     */
     public void intAct(){
         int valor1 = model.getBlindValue(1);
         int valor2 = model.getBlindValue(2);
@@ -93,7 +99,7 @@ public class BlindsView extends javax.swing.JFrame {
             }
         });
 
-        exit_from_blinds.setText("Exit");
+        exit_from_blinds.setText("Back");
         exit_from_blinds.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exit_from_blindsActionPerformed(evt);
@@ -147,9 +153,8 @@ public class BlindsView extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
+                .addContainerGap(48, Short.MAX_VALUE)
                 .addComponent(jLabel4)
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,7 +170,6 @@ public class BlindsView extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(blind1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(exit_from_blinds, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31))
         );
@@ -191,40 +195,6 @@ public class BlindsView extends javax.swing.JFrame {
         controller.blind(3, blind3.getValue());
     }//GEN-LAST:event_blind3StateChanged
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BlindsView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BlindsView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BlindsView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BlindsView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new BlindsView(model).setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JSlider blind1;

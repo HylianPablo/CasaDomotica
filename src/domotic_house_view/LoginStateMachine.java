@@ -6,24 +6,32 @@
 package domotic_house_view;
 
 /**
- *
- * @author angmore
+ * Maquina de estados de la sala domótica.
+ * Práctica de Interacción Persona-Computadora.
+ * Universidad de Valladolid.
+ * @author Pablo Martínez López
+ * @author Ángel Moreno Calvo
  */
 import javax.swing.JFrame;
 import domotic_house_model.Model;
-//import domotic_house_view.images;
-//import domotic_house_view_images.*;
+
 import domotic_house_model.Model;
 
 public class LoginStateMachine {
     private JFrame current_state;
     private Model model;
     
+    /**
+     * Inicializacion de la maquina de estados, donde se empieza con el menu.
+     */
     public LoginStateMachine(){
         model = new Model();
         start();
     }
     
+    /**
+     * Inicializacion de la ventana de menu.
+     */
     void start(){
         java.awt.EventQueue.invokeLater(new Runnable(){
             public void run(){
@@ -33,6 +41,10 @@ public class LoginStateMachine {
         });
     }
     
+    
+    /**
+     * Inicializacion de la ventana de la luminaria.
+     */
     public void lights(){
         current_state.setVisible(false);
         // Queda eliminar
@@ -44,6 +56,9 @@ public class LoginStateMachine {
         });
     }
     
+    /**
+     * Inicializacion de la ventana del termostato.
+     */
     public void heating(){
         current_state.setVisible(false);
         // Queda eliminar
@@ -55,6 +70,9 @@ public class LoginStateMachine {
         });
     }
     
+    /**
+     * Inicializacion de la ventana de las persianas.
+     */
     public void blinds(){
         current_state.setVisible(false);
         // Queda eliminar
@@ -68,6 +86,9 @@ public class LoginStateMachine {
     
     
     //Este método debería poder usarse para todos las vistas
+    /**
+     * Elimina la vista
+     */
     public void stop(){
         current_state.dispose();
         current_state=null;

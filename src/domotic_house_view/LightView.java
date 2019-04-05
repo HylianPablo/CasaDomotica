@@ -64,7 +64,7 @@ public class LightView extends javax.swing.JFrame {
     *@param color Cadena de texto que representa la ruta hacia la imagen a cambiar.
     */
     public void color_bulb1(String color){
-                bulb1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/bombilla_"+color+".png"))); 
+                bulb1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/bulbs/bombilla_"+color+".png"))); 
 
     }
     /**
@@ -72,7 +72,7 @@ public class LightView extends javax.swing.JFrame {
     *@param color Cadena de texto que representa la ruta hacia la imagen a cambiar.
     */
     public void color_bulb2(String color){
-                bulb2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/bombilla_"+color+".png"))); 
+                bulb2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/bulbs/bombilla_"+color+".png"))); 
 
     }
     /**
@@ -80,7 +80,7 @@ public class LightView extends javax.swing.JFrame {
     *@param color Cadena de texto que representa la ruta hacia la imagen a cambiar.
     */
     public void color_bulb3(String color){
-                bulb3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/bombilla_"+color+".png")));
+                bulb3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/bulbs/bombilla_"+color+".png")));
 
     }
     /**
@@ -88,14 +88,14 @@ public class LightView extends javax.swing.JFrame {
     *@param color Cadena de texto que representa la ruta hacia la imagen a cambiar.
     */
     public void color_bulb4(String color){
-                bulb4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/bombilla_"+color+".png")));
+                bulb4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/bulbs/bombilla_"+color+".png")));
     }
     /**
     * Cambia la imagen de la bombilla 5.
     *@param color Cadena de texto que representa la ruta hacia la imagen a cambiar.
     */
     public void color_bulb5(String color){
-                bulb5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/bombilla_"+color+".png"))); 
+                bulb5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/bulbs/bombilla_"+color+".png"))); 
 
     }
     
@@ -474,7 +474,7 @@ public class LightView extends javax.swing.JFrame {
                 .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bulb4)
                     .addComponent(bulb5, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addContainerGap(102, Short.MAX_VALUE))
         );
 
         jLayeredPane3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {bulb1, bulb2, bulb3, bulb4, bulb5});
@@ -602,7 +602,7 @@ public class LightView extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(295, 295, 295)
                         .addComponent(jLayeredPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(123, Short.MAX_VALUE))
+                .addContainerGap(129, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -613,7 +613,7 @@ public class LightView extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLayeredPane4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLayeredPane3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLayeredPane3, jLayeredPane4});

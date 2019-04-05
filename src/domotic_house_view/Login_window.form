@@ -73,8 +73,26 @@
                           <Component id="heating" min="-2" pref="170" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="lights_text" min="-2" pref="233" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="lights_text" min="-2" pref="233" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="bulb2" max="32767" attributes="0"/>
+                                          <Component id="bulb3" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="bulb1" max="32767" attributes="0"/>
+                                          <Component id="bulb4" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="bulb5" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Component id="bulb_state" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="heating_text" min="-2" pref="225" max="-2" attributes="0"/>
@@ -134,20 +152,34 @@
                               <Component id="lights_text" alignment="3" min="-2" pref="72" max="-2" attributes="0"/>
                               <Component id="blinds_text" alignment="3" min="-2" pref="72" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="bulb_state" min="-2" pref="22" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="heat_value_text" linkSize="6" alignment="0" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
+                              <Group type="102" attributes="0">
                                   <Component id="blind1_value" min="-2" pref="35" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="blind2_value" min="-2" pref="35" max="-2" attributes="0"/>
                               </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="bulb1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="bulb2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="bulb3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="heat_value_text" linkSize="6" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="blind3_value" min="-2" pref="35" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="blind3_value" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="bulb4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="bulb5" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="143" max="32767" attributes="0"/>
+                  <EmptySpace pref="141" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -170,7 +202,9 @@
         </Container>
         <Component class="javax.swing.JButton" name="light_button">
           <Properties>
-            <Property name="text" type="java.lang.String" value="LIGHTS"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/domotic_house_view/images/bulbs/bombilla_inicio.png"/>
+            </Property>
             <Property name="actionCommand" type="java.lang.String" value="light_button"/>
           </Properties>
           <Events>
@@ -179,7 +213,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="heating">
           <Properties>
-            <Property name="text" type="java.lang.String" value="HEATING"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/domotic_house_view/images/termo.png"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="heatingActionPerformed"/>
@@ -187,7 +223,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="blinds">
           <Properties>
-            <Property name="text" type="java.lang.String" value="BLINDS"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/domotic_house_view/images/blind/blinds_draw.png"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="blindsActionPerformed"/>
@@ -198,7 +236,9 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="EXIT"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/domotic_house_view/images/exit.png"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exitActionPerformed"/>
@@ -249,6 +289,36 @@
         <Component class="javax.swing.JLabel" name="blind3_value">
           <Properties>
             <Property name="text" type="java.lang.String" value="Blind3"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="bulb1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Bulb1"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="bulb2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Bulb2"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="bulb3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Bulb3"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="bulb4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Bulb4"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="bulb5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Bulb5"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="bulb_state">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="state"/>
           </Properties>
         </Component>
       </SubComponents>

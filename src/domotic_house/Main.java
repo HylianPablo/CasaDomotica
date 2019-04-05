@@ -15,14 +15,6 @@ public class Main {
     private static LoginStateMachine state_machine;
     public static void main(String args[]){
         state_machine = new LoginStateMachine();
-        
-        /*
-        java.awt.EventQueue.invokeLater(new Runnable(){
-            public void run(){
-                new LightView().setVisible(true);
-            }
-        });
-        */
     }
     
     public static LoginStateMachine getStateMachineLogin(){
