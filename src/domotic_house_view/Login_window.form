@@ -105,7 +105,6 @@
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                           <Component id="blinds" min="-2" pref="170" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                           <Component id="exit" min="-2" pref="170" max="-2" attributes="0"/>
@@ -270,7 +269,7 @@
         <Component class="javax.swing.JLabel" name="heat_value_text">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Dialog" size="24" style="1"/>
+              <Font name="Dialog" size="48" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Value"/>
           </Properties>

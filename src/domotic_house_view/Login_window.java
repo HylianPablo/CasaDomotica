@@ -5,6 +5,7 @@
  */
 package domotic_house_view;
 import domotic_house_model.Model;
+import java.awt.Color;
 /**
  *
  * @author angmore
@@ -20,6 +21,25 @@ public class Login_window extends javax.swing.JFrame {
         initComponents();
         controller = new controllerLoginWindow(this,model);
         information_text();
+        actInt(model.getHeating());
+    }
+    
+    public void actInt(int n){
+        heat_value_text.setText(Integer.toString(n)+"º C");
+        if(n>=10 && n<15){
+            heat_value_text.setForeground(Color.BLUE);
+        }else if(n>=15 && n<=19){
+            heat_value_text.setForeground(Color.CYAN);
+        }else if(n==20){
+            heat_value_text.setForeground(Color.GREEN);
+        }
+        else if(n>=21 && n<25){
+            heat_value_text.setForeground(Color.ORANGE);
+        }else{
+            heat_value_text.setForeground(Color.RED);
+        }
+        
+        
     }
     
     /**
@@ -143,7 +163,7 @@ public class Login_window extends javax.swing.JFrame {
         blinds_text.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
         blinds_text.setText("BLINDS STATE:");
 
-        heat_value_text.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        heat_value_text.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
         heat_value_text.setText("Value");
 
         blind1_value.setText("Blind1");
@@ -199,7 +219,6 @@ public class Login_window extends javax.swing.JFrame {
                                 .addComponent(heat_value_text, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, 0)
                         .addComponent(blinds, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(58, 58, 58)
                         .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
