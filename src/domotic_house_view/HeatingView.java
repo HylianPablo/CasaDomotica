@@ -31,6 +31,9 @@ public class HeatingView extends javax.swing.JFrame {
         temperature_text.setText(Integer.toString(model.getHeating()));
         Heating_slider.setValue(model.getHeating());
         temperature_text.setForeground(Color.GREEN);
+        Leaf_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/leaf.png")));
+        Cold_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/snow.png")));
+        Heat_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/sun1.png")));
         actInt(model.getHeating());
     }
     
@@ -42,6 +45,11 @@ public class HeatingView extends javax.swing.JFrame {
      * @param n valor de la temperatura.
      */
     public void actInt(int n){
+        if(n==20){
+            Leaf_icon.setVisible(true);
+        }else{
+            Leaf_icon.setVisible(false);
+        }
         temperature_text.setText(Integer.toString(n)+"º C");
         if(n>=10 && n<15){
             temperature_text.setForeground(Color.BLUE);
@@ -55,6 +63,8 @@ public class HeatingView extends javax.swing.JFrame {
         }else{
             temperature_text.setForeground(Color.RED);
         }
+        
+        
     }
     
     public int getIntensity(){
@@ -75,11 +85,14 @@ public class HeatingView extends javax.swing.JFrame {
         Heating_slider = new javax.swing.JSlider();
         exit_heting = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        Cold_icon = new javax.swing.JLabel();
+        Heat_icon = new javax.swing.JLabel();
+        Leaf_icon = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("HEATING SYSTEM");
 
-        temperature_text.setFont(new java.awt.Font("Lucida Grande", 0, 60)); // NOI18N
+        temperature_text.setFont(new java.awt.Font("Lucida Grande", 0, 92)); // NOI18N
         temperature_text.setText("20º C");
 
         Heating_slider.setMajorTickSpacing(1);
@@ -104,38 +117,53 @@ public class HeatingView extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
         jLabel1.setText("HEATING");
 
+        Cold_icon.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(343, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(285, Short.MAX_VALUE)
+                .addComponent(Cold_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(exit_heting, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Heating_slider, javax.swing.GroupLayout.PREFERRED_SIZE, 587, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(jLabel1)
-                            .addComponent(temperature_text, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(472, 472, 472))
+                        .addComponent(jLabel1)
+                        .addGap(201, 201, 201))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(exit_heting, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(519, 519, 519))
+                        .addComponent(temperature_text, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(184, 184, 184))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(Heating_slider, javax.swing.GroupLayout.PREFERRED_SIZE, 587, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(298, 298, 298))))
+                        .addComponent(Leaf_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(223, 223, 223)))
+                .addComponent(Heat_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(132, 132, 132))
         );
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {Cold_icon, Heat_icon});
+
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addGap(81, 81, 81)
                 .addComponent(temperature_text, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(115, 115, 115)
-                .addComponent(Heating_slider, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
+                .addGap(36, 36, 36)
+                .addComponent(Leaf_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Heating_slider, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Heat_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Cold_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addComponent(exit_heting, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(104, 104, 104))
         );
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {Cold_icon, Heat_icon});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -163,7 +191,10 @@ public class HeatingView extends javax.swing.JFrame {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Cold_icon;
+    private javax.swing.JLabel Heat_icon;
     private javax.swing.JSlider Heating_slider;
+    private javax.swing.JLabel Leaf_icon;
     private javax.swing.JButton exit_heting;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

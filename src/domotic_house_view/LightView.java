@@ -220,6 +220,14 @@ public class LightView extends javax.swing.JFrame {
        public void changeColorBlue(){
         color_panel.setBackground(Color.BLUE);
     }
+       
+       protected int getIntensity(){
+           return intensity.getValue();
+       }
+       
+       protected String getColor(){
+           return (String) color_list.getSelectedItem();
+       }
     
     /**
      * Cambia el iluminado del borde del botón que representa al modo seleccionado, bien pulsándo dicho botón o activando manualmente sus opciones.
@@ -701,11 +709,11 @@ public class LightView extends javax.swing.JFrame {
     }//GEN-LAST:event_on_offActionPerformed
 
     private void color_listActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_color_listActionPerformed
-        controlador.color((String)color_list.getSelectedItem());
+        controlador.color(/*(String)color_list.getSelectedItem()*/);
     }//GEN-LAST:event_color_listActionPerformed
 
     private void intensityStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_intensityStateChanged
-        controlador.intensidad(intensity.getValue());
+        controlador.intensidad(/*intensity.getValue()*/);
     }//GEN-LAST:event_intensityStateChanged
 
     private void back_from_viewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_from_viewActionPerformed

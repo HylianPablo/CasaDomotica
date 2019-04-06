@@ -133,7 +133,8 @@ public class LightController {
     *Da instrucciones para cambiar el color de la bombilla seleccionada actualmente.
     *@param s Cadena de texto que representa el color a cambiar.
     */
-    public void color(String s){
+    public void color(/*String s*/){
+        String s = view.getColor();
         model.setColor(model.getState(),s);
         change_state(model.getState());
         switch(s){
@@ -162,7 +163,8 @@ public class LightController {
      * bombilla que se encuentra en ese momento encendida.
      * @param n valor de la intensidad a introducir
      */
-    public void intensidad(int n){
+    public void intensidad(/*int n*/){
+        int n=view.getIntensity();
         if(model.getState()>=0){
             model.setIntensidad(model.getState(),n);
             view.actInt(model.getIntensidad(model.getState()));
