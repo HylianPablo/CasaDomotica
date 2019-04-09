@@ -666,23 +666,23 @@ public class LightView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bulb2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bulb2ActionPerformed
-        controlador.activate(1);
+        controlador.activate1();
     }//GEN-LAST:event_bulb2ActionPerformed
 
     private void bulb3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bulb3ActionPerformed
-        controlador.activate(2);
+        controlador.activate2();
     }//GEN-LAST:event_bulb3ActionPerformed
 
     private void bulb4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bulb4ActionPerformed
-        controlador.activate(3);
+        controlador.activate3();
     }//GEN-LAST:event_bulb4ActionPerformed
 
     private void bulb5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bulb5ActionPerformed
-        controlador.activate(4);
+        controlador.activate4();
     }//GEN-LAST:event_bulb5ActionPerformed
 
     private void bulb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bulb1ActionPerformed
-         controlador.activate(0);
+         controlador.activate0();
          //IntNum.setText(String.valueOf(intensity.getValue()));
         
     }//GEN-LAST:event_bulb1ActionPerformed

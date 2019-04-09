@@ -19,9 +19,8 @@ public class Model {
     private String mode;
     private int heating;
     private Color color_heat;
-    private int blind1_value;
-    private int blind2_value;
-    private int blind3_value;
+    private Blind[] blinds;
+    
     
     /**
     *Constructor de la clase Model. En el se crea un array de objetos Bulb 
@@ -38,10 +37,10 @@ public class Model {
         
         heating = 20;
         color_heat = Color.ORANGE;
+        blinds = new Blind[3];
+        for(int i = 0; i<3;i++)
+            blinds[i] = new Blind();
         
-        blind1_value = 100;
-        blind2_value = 100;
-        blind3_value = 100;
     }
   
     /**
@@ -220,31 +219,10 @@ public class Model {
     
     
     public void setBlindValue(int i, int value){
-        switch(i){
-            case 1:
-                blind1_value = value;
-                break;
-            case 2:
-                blind2_value = value;
-                break;
-            case 3:
-                blind3_value = value;
-                break;
-        }
+        blinds[i-1].setValue(value);
     }
     
     public int getBlindValue(int i){
-        switch(i){
-            case 1:
-                return blind1_value;
-                
-            case 2:
-                return blind2_value;
-                
-            case 3:
-                return blind3_value;
-                
-        }
-        return 0;
+        return blinds[i-1].getValue();
     }
 }
