@@ -31,6 +31,7 @@ public class BlindsController {
         int i=1;
         int value=view.getIntensity1();
         model.setBlindValue(i ,value);
+        
         view.intAct();
     }
     

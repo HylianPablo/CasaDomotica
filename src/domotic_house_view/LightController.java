@@ -54,6 +54,24 @@ public class LightController {
     }
     
     
+    public void activate0(){
+        activate(0);
+    }
+    
+    
+    public void activate1(){
+        activate(1);
+    }
+    public void activate2(){
+        activate(2);
+    }
+    public void activate3(){
+        activate(3);
+    }
+    public void activate4(){
+        activate(4);
+    }
+    
     /**
     *Da instrucciones para activar o reactivar el botón dependiendo el estado 
     * en que estuviese. Esto se traduce en activar o desactivar los botones de selección derechos.

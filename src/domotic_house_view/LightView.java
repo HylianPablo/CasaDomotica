@@ -17,6 +17,7 @@ public class LightView extends javax.swing.JFrame {
     public boolean active = false;
     Model model;
     LightController controlador;
+    static final String BULB_PATH = "/domotic_house_view/images/bulbs/bombilla_";
     /**
      * Se crea la nueva vista, cargando las imágenes inicales de los botones.
      * Las partes de la derecha están desactivadas inicialmente.
@@ -24,12 +25,9 @@ public class LightView extends javax.swing.JFrame {
     public LightView(Model m) {
         model = m;
         controlador=new LightController(this,model);
+        
         initComponents();
-        /*color_bulb1("GREY");
-        color_bulb2("GREY");
-        color_bulb3("GREY");
-        color_bulb4("GREY");
-        color_bulb5("GREY");*/
+        
         for(int i=0;i<5;i++){
             controlador.change_state(i);
         }
@@ -64,7 +62,7 @@ public class LightView extends javax.swing.JFrame {
     *@param color Cadena de texto que representa la ruta hacia la imagen a cambiar.
     */
     public void color_bulb1(String color){
-                bulb1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/bulbs/bombilla_"+color+".png"))); 
+                bulb1.setIcon(new javax.swing.ImageIcon(getClass().getResource(BULB_PATH +color+".png"))); 
 
     }
     /**
@@ -72,7 +70,7 @@ public class LightView extends javax.swing.JFrame {
     *@param color Cadena de texto que representa la ruta hacia la imagen a cambiar.
     */
     public void color_bulb2(String color){
-                bulb2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/bulbs/bombilla_"+color+".png"))); 
+                bulb2.setIcon(new javax.swing.ImageIcon(getClass().getResource(BULB_PATH +color+".png"))); 
 
     }
     /**
@@ -80,7 +78,7 @@ public class LightView extends javax.swing.JFrame {
     *@param color Cadena de texto que representa la ruta hacia la imagen a cambiar.
     */
     public void color_bulb3(String color){
-                bulb3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/bulbs/bombilla_"+color+".png")));
+                bulb3.setIcon(new javax.swing.ImageIcon(getClass().getResource(BULB_PATH +color+".png")));
 
     }
     /**
@@ -88,14 +86,14 @@ public class LightView extends javax.swing.JFrame {
     *@param color Cadena de texto que representa la ruta hacia la imagen a cambiar.
     */
     public void color_bulb4(String color){
-                bulb4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/bulbs/bombilla_"+color+".png")));
+                bulb4.setIcon(new javax.swing.ImageIcon(getClass().getResource(BULB_PATH +color+".png")));
     }
     /**
     * Cambia la imagen de la bombilla 5.
     *@param color Cadena de texto que representa la ruta hacia la imagen a cambiar.
     */
     public void color_bulb5(String color){
-                bulb5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/bulbs/bombilla_"+color+".png"))); 
+                bulb5.setIcon(new javax.swing.ImageIcon(getClass().getResource(BULB_PATH +color+".png"))); 
 
     }
     
@@ -233,8 +231,7 @@ public class LightView extends javax.swing.JFrame {
      * Cambia el iluminado del borde del botón que representa al modo seleccionado, bien pulsándo dicho botón o activando manualmente sus opciones.
      */
     public void change_color_button(){
-        //System.out.println(model.getMode());
-        switch (model.getMode()){
+            switch (model.getMode()){
             case "ALL_ON":
                all_on.setBackground(Color.CYAN);
                all_off.setBackground(Color.LIGHT_GRAY);
@@ -589,7 +586,7 @@ public class LightView extends javax.swing.JFrame {
                         .addComponent(jLabel6)
                         .addComponent(color_list, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addContainerGap(131, Short.MAX_VALUE))
         );
 
         jLayeredPane4Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {IntNum, intensity, jLabel4});
@@ -608,9 +605,9 @@ public class LightView extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLayeredPane4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(295, 295, 295)
+                        .addGap(167, 167, 167)
                         .addComponent(jLayeredPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(129, Short.MAX_VALUE))
+                .addContainerGap(227, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -621,7 +618,7 @@ public class LightView extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLayeredPane4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLayeredPane3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLayeredPane3, jLayeredPane4});
@@ -666,24 +663,24 @@ public class LightView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bulb2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bulb2ActionPerformed
-        controlador.activate(1);
+        controlador.activate1();
     }//GEN-LAST:event_bulb2ActionPerformed
 
     private void bulb3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bulb3ActionPerformed
-        controlador.activate(2);
+        controlador.activate2();
     }//GEN-LAST:event_bulb3ActionPerformed
 
     private void bulb4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bulb4ActionPerformed
-        controlador.activate(3);
+        controlador.activate3();
     }//GEN-LAST:event_bulb4ActionPerformed
 
     private void bulb5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bulb5ActionPerformed
-        controlador.activate(4);
+        controlador.activate4();
     }//GEN-LAST:event_bulb5ActionPerformed
 
     private void bulb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bulb1ActionPerformed
-         controlador.activate(0);
-         //IntNum.setText(String.valueOf(intensity.getValue()));
+         controlador.activate0();
+        
         
     }//GEN-LAST:event_bulb1ActionPerformed
 
@@ -709,11 +706,11 @@ public class LightView extends javax.swing.JFrame {
     }//GEN-LAST:event_on_offActionPerformed
 
     private void color_listActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_color_listActionPerformed
-        controlador.color(/*(String)color_list.getSelectedItem()*/);
+        controlador.color();
     }//GEN-LAST:event_color_listActionPerformed
 
     private void intensityStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_intensityStateChanged
-        controlador.intensidad(/*intensity.getValue()*/);
+        controlador.intensidad();
     }//GEN-LAST:event_intensityStateChanged
 
     private void back_from_viewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_from_viewActionPerformed
