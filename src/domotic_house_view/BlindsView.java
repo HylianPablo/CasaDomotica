@@ -16,6 +16,7 @@ import domotic_house_model.Model;
 public class BlindsView extends javax.swing.JFrame {
     private static Model model;
     BlindsController controller;
+    static final String IMAGE_PATH = "/domotic_house_view/images/blind/";
     
     /**
      * Se crea la nueva vista, cargando las imágenes inicales.
@@ -26,8 +27,18 @@ public class BlindsView extends javax.swing.JFrame {
         controller=new BlindsController(this,m);
         initComponents();
         intAct();
+        upgrade_slider();
     }
-
+    
+    /**
+     * Pone los valores de los sliders al mismo valor que tiene el modelo.
+     */
+    public void upgrade_slider(){
+        blind1.setValue(model.getBlindValue(1));
+        blind2.setValue(model.getBlindValue(2));
+        blind3.setValue(model.getBlindValue(3));
+    }
+    
     /**
      * Cambio por parte de las imagenes a traves del modelo.
      */
@@ -36,11 +47,11 @@ public class BlindsView extends javax.swing.JFrame {
         int valor2 = model.getBlindValue(2);
         int valor3 = model.getBlindValue(3);
         if(valor1%10 == 0 )
-            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/blind/"+valor1+".png")));
+            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(IMAGE_PATH +valor1+".png")));
         if(valor2%10 == 0 )
-            jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/blind/"+valor2+".png")));
+            jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource(IMAGE_PATH +valor2+".png")));
         if(valor3%10 == 0 )
-            jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/blind/"+valor3+".png")));    
+            jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource(IMAGE_PATH +valor3+".png")));    
     }
     
     public int getIntensity1(){
@@ -191,15 +202,15 @@ public class BlindsView extends javax.swing.JFrame {
     }//GEN-LAST:event_exit_from_blindsActionPerformed
 
     private void blind1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_blind1StateChanged
-        controller.blind1(/*1, blind1.getValue()*/);
+        controller.blind1();
     }//GEN-LAST:event_blind1StateChanged
 
     private void blind2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_blind2StateChanged
-        controller.blind2(/*2, blind2.getValue()*/);
+        controller.blind2();
     }//GEN-LAST:event_blind2StateChanged
 
     private void blind3StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_blind3StateChanged
-        controller.blind3(/*3, blind3.getValue()*/);
+        controller.blind3();
     }//GEN-LAST:event_blind3StateChanged
 
 
