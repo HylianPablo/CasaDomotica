@@ -217,11 +217,21 @@ public class Model {
     }
     
     
-    
+    /**
+     * Establece el valor guardado del porcentaje de cerrado de las ventanas.
+     * @param i Numero de la ventana a cambiar de valor.
+     * @param value El valor que se desea poner, debe ser positivo y menor de
+     * 100.
+     */
     public void setBlindValue(int i, int value){
         blinds[i-1].setValue(value);
     }
     
+    /**
+     * Comprueba el valor de cerrado de una ventana.
+     * @param i Número de la ventana de la que se quiere saber el valor.
+     * @return Entero, menor de 100 y mayor de 0.
+     */
     public int getBlindValue(int i){
         return blinds[i-1].getValue();
     }

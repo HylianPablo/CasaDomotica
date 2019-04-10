@@ -1,7 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Contenido en el paquete que agrupa las vistas y controladores y la maquina
+ * de estados de la casa domótica
+ * de la casa domótica.
+ * Se importa el modelo para guardar los estados y establecerlos inicialmente.
+ * Se importa la clase Color con el fin de utilizarla para establecer el color
+ * de la temperatura.
  */
 package domotic_house_view;
 import domotic_house_model.Model;
@@ -67,6 +70,10 @@ public class HeatingView extends javax.swing.JFrame {
         
     }
     
+    /**
+     * Devuelve el valor del slider
+     * @return Entero entre 10 y 30 incluidos
+     */
     public int getIntensity(){
         return Heating_slider.getValue();
     }
@@ -181,7 +188,7 @@ public class HeatingView extends javax.swing.JFrame {
 
     private void Heating_sliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Heating_sliderStateChanged
     //TODO esto hay que terminarlo    
-    controlador.slider(/*Heating_slider.getValue()*/);
+    controlador.slider();
     }//GEN-LAST:event_Heating_sliderStateChanged
 
     private void exit_hetingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exit_hetingActionPerformed

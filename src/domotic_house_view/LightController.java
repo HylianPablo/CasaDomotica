@@ -1,6 +1,9 @@
 /**
- * Contenido en el paquete que agrupa los componentes del controlador de la casa domótica.
+ * Contenido en el paquete que agrupa los componentes del controlador y la 
+ * maquina de estados de la casa domótica de la casa domótica.
  * Se importa la clase Model con el fin de acceder al modelo.
+ * Se importa la clase Main para poder realizar el cambio de ventanas con la 
+ * máquina de estados.
  */
 package domotic_house_view;
 import domotic_house_model.Model;
@@ -17,9 +20,10 @@ public class LightController {
     private Model model;
     
     /**
-    *Constructor de la clase controlador a partir de una vista y un modelo.
-    *@param v Vista de la sala domótica.
-    *@param m Modelo de la sala domótica.
+    * Constructor de la clase controlador a partir de una vista y un modelo.
+    *
+    * @param v Vista de la sala domótica.
+    * @param m Modelo de la sala domótica.
     */
     public LightController(LightView v, Model m){
         view = v;
@@ -27,9 +31,10 @@ public class LightController {
     }
     
     /**
-    *Da instrucciones para cambiar la imagen del botón asociado a la bombilla 
+    * Da instrucciones para cambiar la imagen del botón asociado a la bombilla 
     * dependiendo si estaba encendida o apagada, llamando a la vista para realizar la acción.
-    *@param i Entero que representa la bombilla a cambiar la imagen.
+    *
+    * @param i Entero que representa la bombilla a cambiar la imagen.
     */
     public void change_state(int i){
         switch(i+1) {
@@ -73,9 +78,10 @@ public class LightController {
     }
     
     /**
-    *Da instrucciones para activar o reactivar el botón dependiendo el estado 
+    * Da instrucciones para activar o reactivar el botón dependiendo el estado 
     * en que estuviese. Esto se traduce en activar o desactivar los botones de selección derechos.
-    *@param i Entero que representa la bombilla a activar o desactivar.
+    * 
+    * @param i Entero que representa la bombilla a activar o desactivar.
     */
     public void activate(int i){
         if(model.getState() == i){
@@ -132,7 +138,8 @@ public class LightController {
         view.refresh_on_off();
     }
     /**
-    * Apaga todas las bombillas en la vista y pone su estado a apagado en el modelo.
+    * Apaga todas las bombillas en la vista y pone su estado a apagado en 
+    * el modelo.
     */
     public void all_off(){
         
@@ -148,10 +155,10 @@ public class LightController {
         }
     
     /**
-    *Da instrucciones para cambiar el color de la bombilla seleccionada actualmente.
-    *@param s Cadena de texto que representa el color a cambiar.
+    *Da instrucciones para cambiar el color de la bombilla seleccionada 
+    * actualmente.
     */
-    public void color(/*String s*/){
+    public void color(){
         String s = view.getColor();
         model.setColor(model.getState(),s);
         change_state(model.getState());
@@ -179,9 +186,8 @@ public class LightController {
     /**
      * Manda a view el valor de la intensidad en un momento cuelquiera de la 
      * bombilla que se encuentra en ese momento encendida.
-     * @param n valor de la intensidad a introducir
      */
-    public void intensidad(/*int n*/){
+    public void intensidad(){
         int n=view.getIntensity();
         if(model.getState()>=0){
             model.setIntensidad(model.getState(),n);
@@ -240,7 +246,9 @@ public class LightController {
     }
     
     /**
-     * Establece los valores del modo ambiente en el modelo y da instrucciones a la vista para mostrar las modificaciones. Esto se traduce en encender todas las bombillas con un 30% de intensidad y en color amarillo.
+     * Establece los valores del modo ambiente en el modelo y da instrucciones 
+     * a la vista para mostrar las modificaciones. Esto se traduce en encender 
+     * todas las bombillas con un 30% de intensidad y en color amarillo.
      */        
     public void ambiente(){
         model.all_on();
@@ -259,7 +267,9 @@ public class LightController {
     
     /**
      * Comprueba si todas las bombillas se encuentran encendidas.
-     * @return retorna un booleano, {@code true} en el caso de que se cumplan las condiciones, {@code false} en caso de que no se cumplan.
+     * 
+     * @return retorna un booleano, {@code true} en el caso de que se cumplan 
+     * las condiciones, {@code false} en caso de que no se cumplan.
      */
     public boolean mode_all_on(){
         for(int i = 0; i< 5;i++){
@@ -276,7 +286,9 @@ public class LightController {
     
     /**
      * Comprueba que todas las bombillas están apagadas.
-     * @return Valor booleano {@code true} si todas las bombillas están apagadas y {@code false} en caso contrario.
+     * 
+     * @return Valor booleano {@code true} si todas las bombillas están 
+     * apagadas y {@code false} en caso contrario.
      * 
      */
     public boolean mode_all_off(){
@@ -289,8 +301,12 @@ public class LightController {
     }
     
     /**
-     * Comprueba los requisitos de las bombillas establecidos para el modo ambiente. Esto es que todas estén encendidas, con una intensidad del 30% y en color amarillo.
-     * @return Valor booleano {@code true} en caso de cumplir las condiciones y {@code false} en caso contrario.  
+     * Comprueba los requisitos de las bombillas establecidos para el modo 
+     * ambiente. Esto es que todas estén encendidas, con una intensidad del 
+     * 30% y en color amarillo.
+     * 
+     * @return Valor booleano {@code true} en caso de cumplir las condiciones 
+     * y {@code false} en caso contrario.  
      */
     public boolean mode_ambiente(){
         for(int i = 0; i< 5;i++){
@@ -306,8 +322,13 @@ public class LightController {
     }
     
     /**
-     * Comprueba los requisitos de las bombillas establecidos para el modo lectura. Esto es que la primera y tercera bombilla estén encendidas y las restantes apagadas. Las bombillas encendidas contarán con una intensidad del 60% y en color blanco.
-     * @return Valor booleano {@code true} en caso de cumplir las condiciones y {@code false} en caso contrario.  
+     * Comprueba los requisitos de las bombillas establecidos para el 
+     * modo lectura. Esto es que la primera y tercera bombilla estén encendidas 
+     * y las restantes apagadas. Las bombillas encendidas contarán con una 
+     * intensidad del 60% y en color blanco.
+     * 
+     * @return Valor booleano {@code true} en caso de cumplir las condiciones 
+     * y {@code false} en caso contrario.  
      */
     public boolean mode_lectura(){
         if(!model.getEncendido(0) || !model.getEncendido(2)){
@@ -324,6 +345,10 @@ public class LightController {
         return true;
     }
     
+    
+    /**
+     * Cierra la vista de las bombillas, y pasa a login.
+     */
     public void back_to_login(){
         Main.getStateMachineLogin().stop();
         Main.getStateMachineLogin().start();

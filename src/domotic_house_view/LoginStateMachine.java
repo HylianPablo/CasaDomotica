@@ -1,7 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Contenido en el paquete que agrupa las vistas y controladores y la maquina
+ * de estados de la casa domótica.
+ * Se importa el modelo para guardar los estados y establecerlos inicialmente.
+ * Se importa la clase Main para poder realizar el cambio de ventana.
  */
 package domotic_house_view;
 
@@ -13,8 +14,6 @@ package domotic_house_view;
  * @author Ángel Moreno Calvo
  */
 import javax.swing.JFrame;
-import domotic_house_model.Model;
-
 import domotic_house_model.Model;
 
 public class LoginStateMachine {
@@ -30,7 +29,7 @@ public class LoginStateMachine {
     }
     
     /**
-     * Inicializacion de la ventana de menu.
+     * Inicializacion de la ventana de menu y hace visible la vista de login.
      */
     void start(){
         java.awt.EventQueue.invokeLater(new Runnable(){
@@ -43,7 +42,8 @@ public class LoginStateMachine {
     
     
     /**
-     * Inicializacion de la ventana de la luminaria.
+     * Inicializacion de la ventana de la luminaria y hace visible la vista de
+     * las luces.
      */
     public void lights(){
         current_state.setVisible(false);
@@ -57,7 +57,8 @@ public class LoginStateMachine {
     }
     
     /**
-     * Inicializacion de la ventana del termostato.
+     * Inicializacion de la ventana del termostato y la hace visible la vista
+     * de la calefacción.
      */
     public void heating(){
         current_state.setVisible(false);
@@ -71,7 +72,7 @@ public class LoginStateMachine {
     }
     
     /**
-     * Inicializacion de la ventana de las persianas.
+     * Inicializacion de la ventana de las persianas y hace visible su vista.
      */
     public void blinds(){
         current_state.setVisible(false);
@@ -85,13 +86,11 @@ public class LoginStateMachine {
     }
     
     
-    //Este método debería poder usarse para todos las vistas
     /**
-     * Elimina la vista
+     * Elimina la vista que se encuentre abierta y la elimina.
      */
     public void stop(){
         current_state.dispose();
         current_state=null;
-        //current_state.setVisible(false);
     }
 }
