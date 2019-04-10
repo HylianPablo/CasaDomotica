@@ -1,7 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Contenido en el paquete que agrupa las vistas y controladores y la maquina
+ * de estados de la casa domótica
+ * de la casa domótica.
+ * Se importa el modelo para guardar los estados y establecerlos inicialmente.
+ * Se importa la clase Main para poder realizar el cambio de ventana.
  */
 package domotic_house_view;
 import domotic_house_model.Model;
@@ -19,9 +21,10 @@ public class HeatingController {
     
     
     /**
-    *Constructor de la clase controlador a partir de una vista y un modelo.
-    *@param v Vista de la sala domótica.
-    *@param m Modelo de la sala domótica.
+    * Constructor de la clase HeatingControler a partir de una vista y un modelo.
+    * 
+    * @param v Vista de la sala domótica.
+    * @param m Modelo de la sala domótica.
     */
     public HeatingController(HeatingView v, Model m){
         model = m;
@@ -30,7 +33,7 @@ public class HeatingController {
     
     
     /**
-     * Devuelve la vista al menu.
+     * Cierra la vista de la calefacción y devuelve la vista al menu.
      */
     public void back_to_login(){
         Main.getStateMachineLogin().stop();
@@ -39,10 +42,10 @@ public class HeatingController {
     }
     
     /**
-     * Cambia el valor del slider
-     * @param n 
+     * Cambia el valor del slider guardado en modelo a traves de lo recibido por
+     * la vista. 
      */
-    public void slider(/*int n*/){
+    public void slider(){
         int n=view.getIntensity();
         model.setHeating(n);
         view.actInt(n);
