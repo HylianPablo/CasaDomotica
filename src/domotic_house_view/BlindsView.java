@@ -1,7 +1,7 @@
-/*
- * Contenido en el paquete que agrupa los componentes de la vista de la casa domótica.
+/**
+ * Contenido en el paquete que agrupa los componentes de las vistas de la casa domótica.
  * Se importa la clase Model con el fin de acceder al modelo.
-*/
+ */
 package domotic_house_view;
 
 import domotic_house_model.Model;
@@ -19,8 +19,9 @@ public class BlindsView extends javax.swing.JFrame {
     static final String IMAGE_PATH = "/domotic_house_view/images/blind/";
     
     /**
-     * Se crea la nueva vista, cargando las imágenes inicales.
+     * Se crea la nueva vista, cargando las imágenes inicales y los valores de los sliders.
      * Inicialmente se encuentran cerradas.
+     * @param m Modelo del sistema que se transfiere al cambiar de vista.
      */
     public BlindsView(Model m) {
         model=m;
@@ -31,7 +32,7 @@ public class BlindsView extends javax.swing.JFrame {
     }
     
     /**
-     * Pone los valores de los sliders al mismo valor que tiene el modelo.
+     * Actualiza los valores de los sliders al mismo valor que tiene el modelo.
      */
     public void upgrade_slider(){
         blind1.setValue(model.getBlindValue(1));
@@ -40,7 +41,7 @@ public class BlindsView extends javax.swing.JFrame {
     }
     
     /**
-     * Cambio por parte de las imagenes a traves del modelo.
+     * Actualiza las imágenes en función de su valor en el modelo.
      */
     public void intAct(){
         int valor1 = model.getBlindValue(1);
@@ -54,14 +55,26 @@ public class BlindsView extends javax.swing.JFrame {
             jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource(IMAGE_PATH +valor3+".png")));    
     }
     
+    /**
+     * Consulta el porcentaje en que está abierta la primera persiana.
+     * @return Número entero que representa el porcentaje en que está abierta la persiana.
+     */
     public int getIntensity1(){
         return blind1.getValue();
     }
     
+    /**
+     * Consulta el porcentaje en que está abierta la segunda persiana.
+     * @return Número entero que representa el porcentaje en que está abierta la persiana.
+     */
     public int getIntensity2(){
         return blind2.getValue();
     }
     
+    /**
+     * Consulta el porcentaje en que está abierta la tercera persiana.
+     * @return Número entero que representa el porcentaje en que está abierta la persiana.
+     */
     public int getIntensity3(){
         return blind3.getValue();
     }

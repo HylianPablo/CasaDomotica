@@ -1,22 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Contenido en el paquete que agrupa los componentes de las vistas de la casa domótica, sus respectivos controladores y la máquina de estados.
+ * Se importa la clase Model con el fin de acceder al modelo.
+ * Se importa la clase Color con el fin de cambiar el fondo de la caja de texto que representa el color.
+ * Se importa la clase Calendar con el fin de mostrar la fecha en el panel inicial.
  */
 package domotic_house_view;
 import domotic_house_model.Model;
 import java.awt.Color;
 import java.util.Calendar;
+
 /**
- *
- * @author angmore
+ * Vista del panel principal de la casa domótica. En esta vista podemos acceder a las demás secciones de la casa domótica.
+ * Práctica de Interacción Persona-Computadora.
+ * Universidad de Valladolid.
+ * @author Pablo Martínez López
+ * @author Ángel Moreno Calvo
  */
 public class Login_window extends javax.swing.JFrame {
     private controllerLoginWindow controller;
-    /** 
-     * Creates new form Login_window
-     */
     private static Model model;
+    
+    /**
+     * Creación de la vista mostrando los parámetros actuales de las distintas partes de la casa domótica.
+     * @param m Modelo del sistema que se transfiere al cambiar de vista.
+     */
     public Login_window(Model m) {
         model = m;
         initComponents();
@@ -39,6 +46,10 @@ public class Login_window extends javax.swing.JFrame {
         clock.start();
     }
     
+    /**
+     * Actualiza la etiqueta referente a la temperatura. Dependiendo del valor de la temperatura la etiqueta adopta un valor determinado.
+     * @param n Número entero que representa el valor de la temperatura.
+     */
     public void actInt(int n){
         heat_value_text.setText(Integer.toString(n)+"º C");
         if(n>=10 && n<15){
@@ -58,7 +69,7 @@ public class Login_window extends javax.swing.JFrame {
     }
     
     /**
-     * Varia los valores de los datos mostrados en el menu.
+     * Actualiza los valores de los datos de la casa domótica mostrados en el menú.
      */
     public void information_text(){
         
@@ -85,8 +96,8 @@ public class Login_window extends javax.swing.JFrame {
     /**
      * Cambio de string, permite el transformar el (@code{true}) por On y 
      * el (@code{false}) por Off.
-     * @param i bombilla de la que quieres saber el estado.
-     * @return un string.
+     * @param i Número entero que representa la bombilla de la que se quiere conocer el estado.
+     * @return Cadena de caracteres que representa el valor de la bombilla seleccionada.
      */
     private String on_off_string(int i){
         return (model.getEncendido(i) ? "On" : "Off");
@@ -270,11 +281,12 @@ public class Login_window extends javax.swing.JFrame {
                         .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(67, 67, 67)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(exit)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(exit, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(blinds, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(heating)
-                            .addComponent(light_button, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(heating)
+                                .addComponent(light_button, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()

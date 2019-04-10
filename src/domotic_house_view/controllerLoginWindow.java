@@ -1,6 +1,6 @@
 /**
  * Contenido en el paquete que agrupa los componentes de la vista 
- * de la casa domótica.
+ * de la casa domótica, sus respectivos controladores y la máquina de estados.
  * Se importa la clase Main con el fin de utilizarla para realizar el cambio 
  * de ventanas.
  * Se importa la clase Model con el fin de acceder al modelo.
@@ -23,8 +23,8 @@ public class controllerLoginWindow {
     /**
      * Inicializador del controlador del menu a traves de la vista del menu y
      * el modelo.
-     * @param v vista de la ventana menu.
-     * @param m modelo global.
+     * @param v Vista {@code Login_window} de la ventana inicial menú.
+     * @param m Modelo global del sistema.
      */
     public controllerLoginWindow(Login_window v, Model m){
         login_view = v;
@@ -32,21 +32,21 @@ public class controllerLoginWindow {
     
     
     /**
-     * Manda a la maquina de estados cambiar la vista por de la la luminaria.
+     * Ordena a la máquina de estados cambiar la vista por la de luminaria.
      */
     public void process_light(){
         Main.getStateMachineLogin().lights();
     }
     
     /**
-     * Manda a la maquina de estados cambiar la vista por la de la temperatura.
+     * Ordena a la máquina de estados cambiar la vista por la de temperatura.
      */
     public void process_heating(){
         Main.getStateMachineLogin().heating();
     }
     
     /**
-     * Manda a la maquina de estados cambiar la vista por la de las persianas.
+     * Ordena a la máquina de estados cambiar la vista por la de las persianas.
      */
     public void process_blinds(){
         Main.getStateMachineLogin().blinds();

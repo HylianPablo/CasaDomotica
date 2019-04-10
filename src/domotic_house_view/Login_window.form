@@ -144,11 +144,13 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="exit" linkSize="4" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Component id="blinds" linkSize="4" alignment="0" min="-2" pref="116" max="-2" attributes="0"/>
-                              <Component id="heating" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="light_button" linkSize="4" alignment="3" min="-2" pref="110" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="heating" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="light_button" linkSize="4" alignment="3" min="-2" pref="110" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">

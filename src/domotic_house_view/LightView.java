@@ -1,5 +1,5 @@
 /**
- * Contenido en el paquete que agrupa los componentes de la vista de la casa domótica.
+ * Contenido en el paquete que agrupa los componentes de las vistas de la casa domótica, sus respectivos controladores y la máquina de estados..
  * Se importa la clase Model con el fin de acceder al modelo.
  * Se importa la clase Color con el fin de cambiar el fondo de la caja de texto que representa el color.
  */
@@ -21,6 +21,7 @@ public class LightView extends javax.swing.JFrame {
     /**
      * Se crea la nueva vista, cargando las imágenes inicales de los botones.
      * Las partes de la derecha están desactivadas inicialmente.
+     * @param m Modelo del sistema que se transfiere al cambiar de vista.
      */
     public LightView(Model m) {
         model = m;
@@ -53,10 +54,7 @@ public class LightView extends javax.swing.JFrame {
         x.start();
         
     }
-    //Creo que sobra.
-    public String image_white(){
-        return "/domotic_house_view/images/bombilla_opt.png";
-    }
+    
     /**
     * Cambia la imagen de la bombilla 1.
     *@param color Cadena de texto que representa la ruta hacia la imagen a cambiar.
