@@ -2,7 +2,7 @@
  * Tipo de dato que representa una bombilla,
  * aprota funcinalidades de encendido o apagado, valor de la intensidad a la que 
  * se encuentra la bombilla y el color que tiene dicha bombilla.
- * El estodo inicial de la bombilla sera apagado, con intensidad 0, y color
+ * El estado inicial de la bombilla sera apagado, con intensidad 0, y color
  * blanco.
  * Aporta la posibilidad de poder variar cualquiera de estas funcionalidades.
  * 
