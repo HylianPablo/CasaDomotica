@@ -28,6 +28,7 @@ public class LightView extends javax.swing.JFrame {
         controlador=new LightController(this,model);
         
         initComponents();
+        back_from_view.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/back.png")));
         
         for(int i=0;i<5;i++){
             controlador.change_state(i);
@@ -300,13 +301,13 @@ public class LightView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("LIGHTS SYSTEM");
         setLocation(new java.awt.Point(80, 63));
-        setPreferredSize(new java.awt.Dimension(1150, 600));
+        setPreferredSize(new java.awt.Dimension(1024, 569));
         setResizable(false);
-        setSize(new java.awt.Dimension(0, 0));
+        setSize(new java.awt.Dimension(1000, 500));
 
         jPanel1.setPreferredSize(new java.awt.Dimension(1150, 600));
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("LIGHTS");
 
@@ -339,8 +340,7 @@ public class LightView extends javax.swing.JFrame {
             }
         });
 
-        back_from_view.setBackground(new java.awt.Color(255, 51, 51));
-        back_from_view.setText("BACK");
+        back_from_view.setBackground(new java.awt.Color(255, 102, 102));
         back_from_view.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 back_from_viewActionPerformed(evt);
@@ -383,9 +383,8 @@ public class LightView extends javax.swing.JFrame {
         jLayeredPane2Layout.setVerticalGroup(
             jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(24, 24, 24)
                 .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(back_from_view, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)

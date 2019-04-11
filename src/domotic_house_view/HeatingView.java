@@ -34,6 +34,7 @@ public class HeatingView extends javax.swing.JFrame {
         temperature_text.setText(Integer.toString(model.getHeating()));
         Heating_slider.setValue(model.getHeating());
         temperature_text.setForeground(Color.GREEN);
+        exit_heating.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/back.png")));
         Leaf_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/leaf.png")));
         Cold_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/snow.png")));
         Heat_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/sun1.png")));
@@ -90,7 +91,7 @@ public class HeatingView extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         temperature_text = new javax.swing.JLabel();
         Heating_slider = new javax.swing.JSlider();
-        exit_heting = new javax.swing.JButton();
+        exit_heating = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         Cold_icon = new javax.swing.JLabel();
         Heat_icon = new javax.swing.JLabel();
@@ -98,6 +99,9 @@ public class HeatingView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("HEATING SYSTEM");
+        setPreferredSize(new java.awt.Dimension(1024, 569));
+        setResizable(false);
+        setSize(new java.awt.Dimension(1000, 500));
 
         temperature_text.setFont(new java.awt.Font("Lucida Grande", 0, 92)); // NOI18N
         temperature_text.setText("20º C");
@@ -113,11 +117,10 @@ public class HeatingView extends javax.swing.JFrame {
             }
         });
 
-        exit_heting.setBackground(new java.awt.Color(255, 51, 51));
-        exit_heting.setText("Back");
-        exit_heting.addActionListener(new java.awt.event.ActionListener() {
+        exit_heating.setBackground(new java.awt.Color(255, 102, 102));
+        exit_heating.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exit_hetingActionPerformed(evt);
+                exit_heatingActionPerformed(evt);
             }
         });
 
@@ -135,7 +138,7 @@ public class HeatingView extends javax.swing.JFrame {
                 .addComponent(Cold_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(exit_heting, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(exit_heating, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Heating_slider, javax.swing.GroupLayout.PREFERRED_SIZE, 587, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -166,7 +169,7 @@ public class HeatingView extends javax.swing.JFrame {
                     .addComponent(Heating_slider, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Heat_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Cold_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addComponent(exit_heting, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(exit_heating, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(104, 104, 104))
         );
 
@@ -191,9 +194,9 @@ public class HeatingView extends javax.swing.JFrame {
     controlador.slider();
     }//GEN-LAST:event_Heating_sliderStateChanged
 
-    private void exit_hetingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exit_hetingActionPerformed
+    private void exit_heatingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exit_heatingActionPerformed
         controlador.back_to_login();
-    }//GEN-LAST:event_exit_hetingActionPerformed
+    }//GEN-LAST:event_exit_heatingActionPerformed
 
    
 
@@ -202,7 +205,7 @@ public class HeatingView extends javax.swing.JFrame {
     private javax.swing.JLabel Heat_icon;
     private javax.swing.JSlider Heating_slider;
     private javax.swing.JLabel Leaf_icon;
-    private javax.swing.JButton exit_heting;
+    private javax.swing.JButton exit_heating;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel temperature_text;

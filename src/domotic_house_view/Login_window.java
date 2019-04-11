@@ -64,8 +64,6 @@ public class Login_window extends javax.swing.JFrame {
         }else{
             heat_value_text.setForeground(Color.RED);
         }
-        
-        
     }
     
     /**
@@ -80,9 +78,33 @@ public class Login_window extends javax.swing.JFrame {
        
         // Datos persianas
         blinds_text.setText("BLINDS STATE: ");
-        blind1_value.setText("Blind one: "+Integer.toString(model.getBlindValue(1))+"% closed");
-        blind2_value.setText("Blind two: "+Integer.toString(model.getBlindValue(2))+"% closed");
-        blind3_value.setText("Blind three: "+Integer.toString(model.getBlindValue(3))+"% closed");
+        if(model.getBlindValue(1)==100){
+            blind1_value.setText("Blind one: closed");
+        }else if(model.getBlindValue(1)==0){
+            blind1_value.setText("Blind one: open");
+        }else{
+            blind1_value.setText("Blind one: "+Integer.toString(Math.abs(model.getBlindValue(1)-100))+"% open");
+        }
+        
+        if(model.getBlindValue(2)==100){
+            blind2_value.setText("Blind two: closed");
+        }else if(model.getBlindValue(2)==0){
+            blind2_value.setText("Blind two: open");
+        }else{
+            blind2_value.setText("Blind two: "+Integer.toString(Math.abs(model.getBlindValue(2)-100))+"% open");
+        }
+        
+        if(model.getBlindValue(3)==100){
+            blind3_value.setText("Blind three: closed");
+        }else if(model.getBlindValue(3)==0){
+            blind3_value.setText("Blind three: open");
+        }else{
+            blind3_value.setText("Blind three: "+Integer.toString(Math.abs(model.getBlindValue(3)-100))+"% open");
+        }
+        
+        
+        //blind2_value.setText("Blind two: "+Integer.toString(Math.abs(model.getBlindValue(2)-100))+"% open");
+        //blind3_value.setText("Blind three: "+Integer.toString(Math.abs(model.getBlindValue(3)-100))+"% open");
         
         // Datos bombillas
         bulb_state.setText("Configuration: " + model.getMode() );
@@ -135,8 +157,9 @@ public class Login_window extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("DOMOTIC HOUSE");
-        setPreferredSize(new java.awt.Dimension(1000, 600));
-        setSize(new java.awt.Dimension(1000, 600));
+        setPreferredSize(new java.awt.Dimension(1024, 569));
+        setResizable(false);
+        setSize(new java.awt.Dimension(1000, 500));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "DOMOTIC HOUSE", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 24))); // NOI18N
         jPanel1.setPreferredSize(new java.awt.Dimension(500, 814));
