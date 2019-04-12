@@ -6,7 +6,7 @@
  * máquina de estados.
  */
 package domotic_house_view;
-import domotic_house_model.Model;
+import domotic_house_model.CasaDomotica;
 import domotic_house.Main;
 /**
  * Controlador de la sala domótica de luces.
@@ -17,7 +17,7 @@ import domotic_house.Main;
  */
 public class LightController {
     private LightView view;
-    private Model model;
+    private CasaDomotica model;
     
     /**
     * Constructor de la clase controlador a partir de una vista y un modelo.
@@ -25,7 +25,7 @@ public class LightController {
     * @param v Vista de la sala domótica.
     * @param m Modelo de la sala domótica.
     */
-    public LightController(LightView v, Model m){
+    public LightController(LightView v, CasaDomotica m){
         view = v;
         model = m;
     }

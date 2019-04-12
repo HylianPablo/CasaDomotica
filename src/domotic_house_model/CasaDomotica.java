@@ -12,7 +12,7 @@ import java.awt.Color;
  * @author Pablo Martínez López
  * @author Ángel Moreno Calvo
  */
-public class Model {
+public class CasaDomotica {
     
     private Bulb[] bombillas;
     private int state;
@@ -26,7 +26,7 @@ public class Model {
     *Constructor de la clase Model. En el se crea un array de objetos Bulb 
     * que representa a las cinco bombillas.
     */
-    public Model(){
+    public CasaDomotica(){
         bombillas = new Bulb[5];
         for(int i = 0; i<5 ;i++){
             bombillas[i] = new Bulb();

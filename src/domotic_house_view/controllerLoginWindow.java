@@ -7,7 +7,7 @@
  */
 package domotic_house_view;
 import domotic_house.Main;
-import domotic_house_model.Model;
+import domotic_house_model.CasaDomotica;
 /**
  * Controlador del menu del salon domotico .
  * Práctica de Interacción Persona-Computadora.
@@ -17,7 +17,7 @@ import domotic_house_model.Model;
  */
 public class controllerLoginWindow {
     private Login_window login_view;
-    private Model model;
+    private CasaDomotica model;
     
     
     /**
@@ -26,7 +26,7 @@ public class controllerLoginWindow {
      * @param v Vista {@code Login_window} de la ventana inicial menú.
      * @param m Modelo global del sistema.
      */
-    public controllerLoginWindow(Login_window v, Model m){
+    public controllerLoginWindow(Login_window v, CasaDomotica m){
         login_view = v;
     }
     
@@ -50,6 +50,14 @@ public class controllerLoginWindow {
      */
     public void process_blinds(){
         Main.getStateMachineLogin().blinds();
+    }
+    
+    /**
+     * Cierra la ventana principal y termina el programa.
+     */
+    public void exit(){
+        login_view.dispose();
+        System.exit(0);
     }
     
     

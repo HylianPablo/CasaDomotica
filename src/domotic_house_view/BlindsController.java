@@ -4,7 +4,7 @@
  * Se importa la clase Main con el fin de acceder a la máquina de estados del sistema.
  */
 package domotic_house_view;
-import domotic_house_model.Model;
+import domotic_house_model.CasaDomotica;
 import domotic_house.Main;
 
 /**
@@ -15,7 +15,7 @@ import domotic_house.Main;
  * @author Pablo Martin Lopez
  */
 public class BlindsController {
-    private Model model;
+    private CasaDomotica model;
     private BlindsView view;
     
     /**
@@ -23,7 +23,7 @@ public class BlindsController {
      * @param v Vista {@code BlindsView} asociada con el controlador.
      * @param m Modelo {@code Model} del sistema.
      */
-    public BlindsController(BlindsView v, Model m){
+    public BlindsController(BlindsView v, CasaDomotica m){
         view=v;
         model=m;
     }

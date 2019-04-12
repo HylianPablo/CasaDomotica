@@ -6,7 +6,7 @@
  * Se importa la clase Main para poder realizar el cambio de ventana.
  */
 package domotic_house_view;
-import domotic_house_model.Model;
+import domotic_house_model.CasaDomotica;
 import domotic_house.Main;
 /**
  * Controlador de la Temperatura de la sala domótica.
@@ -16,7 +16,7 @@ import domotic_house.Main;
  * @author Pablo Martin Lopez
  */
 public class HeatingController {
-    private Model model;
+    private CasaDomotica model;
     private HeatingView view;
     
     
@@ -26,7 +26,7 @@ public class HeatingController {
     * @param v Vista de la sala domótica.
     * @param m Modelo de la sala domótica.
     */
-    public HeatingController(HeatingView v, Model m){
+    public HeatingController(HeatingView v, CasaDomotica m){
         model = m;
         view = v;
     }

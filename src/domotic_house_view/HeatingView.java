@@ -7,7 +7,7 @@
  * de la temperatura.
  */
 package domotic_house_view;
-import domotic_house_model.Model;
+import domotic_house_model.CasaDomotica;
 import java.awt.Color;
 /**
  * Vista del termostato de la sala domótica.
@@ -17,7 +17,7 @@ import java.awt.Color;
  * @author Pablo Martinez Lopez
  */
 public class HeatingView extends javax.swing.JFrame {
-    Model model;
+    CasaDomotica model;
     HeatingController controlador;
     
     
@@ -27,7 +27,7 @@ public class HeatingView extends javax.swing.JFrame {
      * Se necesita el modelo para poder guardar los estados.
      * @param m modelo utilizado en la implementación.
      */
-    public HeatingView(Model m) {
+    public HeatingView(CasaDomotica m) {
         model = m;
         controlador=new HeatingController(this,m);
         initComponents();
@@ -163,10 +163,11 @@ public class HeatingView extends javax.swing.JFrame {
                 .addGap(81, 81, 81)
                 .addComponent(temperature_text, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
-                .addComponent(Leaf_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Heating_slider, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(Leaf_icon, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Heating_slider, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(Heat_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Cold_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addComponent(exit_heating, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)

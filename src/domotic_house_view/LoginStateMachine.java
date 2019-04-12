@@ -14,17 +14,17 @@ package domotic_house_view;
  * @author Ángel Moreno Calvo
  */
 import javax.swing.JFrame;
-import domotic_house_model.Model;
+import domotic_house_model.CasaDomotica;
 
 public class LoginStateMachine {
     private JFrame current_state;
-    private Model model;
+    private CasaDomotica model;
     
     /**
-     * Inicializacion de la maquina de estados, donde se empieza con el menu.
+     * Inicializacion de la máquina de estados, donde se empieza con el menu.
      */
     public LoginStateMachine(){
-        model = new Model();
+        model = new CasaDomotica();
         start();
     }
     

@@ -4,7 +4,7 @@
  * Se importa la clase Color con el fin de cambiar el fondo de la caja de texto que representa el color.
  */
 package domotic_house_view;
-import domotic_house_model.Model;
+import domotic_house_model.CasaDomotica;
 import java.awt.Color;
 /**
  * Vista de la sala domótica de luces.
@@ -15,7 +15,7 @@ import java.awt.Color;
  */
 public class LightView extends javax.swing.JFrame {
     public boolean active = false;
-    Model model;
+    CasaDomotica model;
     LightController controlador;
     static final String BULB_PATH = "/domotic_house_view/images/bulbs/bombilla_";
     /**
@@ -23,7 +23,7 @@ public class LightView extends javax.swing.JFrame {
      * Las partes de la derecha están desactivadas inicialmente.
      * @param m Modelo del sistema que se transfiere al cambiar de vista.
      */
-    public LightView(Model m) {
+    public LightView(CasaDomotica m) {
         model = m;
         controlador=new LightController(this,model);
         

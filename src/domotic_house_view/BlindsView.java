@@ -4,7 +4,7 @@
  */
 package domotic_house_view;
 
-import domotic_house_model.Model;
+import domotic_house_model.CasaDomotica;
 
 /**
  * Vista de las persianas de la sala domótica.
@@ -14,7 +14,7 @@ import domotic_house_model.Model;
  * @author Ángel Moreno Calvo
  */
 public class BlindsView extends javax.swing.JFrame {
-    private static Model model;
+    private static CasaDomotica model;
     BlindsController controller;
     static final String IMAGE_PATH = "/domotic_house_view/images/blind/";
     
@@ -23,7 +23,7 @@ public class BlindsView extends javax.swing.JFrame {
      * Inicialmente se encuentran cerradas.
      * @param m Modelo del sistema que se transfiere al cambiar de vista.
      */
-    public BlindsView(Model m) {
+    public BlindsView(CasaDomotica m) {
         model=m;
         controller=new BlindsController(this,m);
         initComponents();

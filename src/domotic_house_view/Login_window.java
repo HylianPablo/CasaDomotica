@@ -5,7 +5,7 @@
  * Se importa la clase Calendar con el fin de mostrar la fecha en el panel inicial.
  */
 package domotic_house_view;
-import domotic_house_model.Model;
+import domotic_house_model.CasaDomotica;
 import java.awt.Color;
 import java.util.Calendar;
 
@@ -18,13 +18,13 @@ import java.util.Calendar;
  */
 public class Login_window extends javax.swing.JFrame {
     private controllerLoginWindow controller;
-    private static Model model;
+    private static CasaDomotica model;
     
     /**
      * Creación de la vista mostrando los parámetros actuales de las distintas partes de la casa domótica.
      * @param m Modelo del sistema que se transfiere al cambiar de vista.
      */
-    public Login_window(Model m) {
+    public Login_window(CasaDomotica m) {
         model = m;
         initComponents();
         controller = new controllerLoginWindow(this,model);
@@ -377,8 +377,7 @@ public class Login_window extends javax.swing.JFrame {
     }//GEN-LAST:event_blindsActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
-        this.dispose();
-        System.exit(0);
+        controller.exit();
     }//GEN-LAST:event_exitActionPerformed
 
     
