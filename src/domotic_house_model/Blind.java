@@ -32,6 +32,7 @@ public class Blind {
     }
     /**
      * Comprueba el porcentaje de cerrado de la persiana.
+     * 
      * @return Valor entero entre 100 y 0
      */
     public int getValue(){

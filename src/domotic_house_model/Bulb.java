@@ -58,6 +58,7 @@ public class Bulb {
     }
     /**
      * Consuta el parametro encendido.
+     * 
      * @return si esta encencendida el valor de retorno sera {@code true}
      */
     public boolean getEncendido( ){
@@ -65,6 +66,7 @@ public class Bulb {
     }
     /**
      * Consulta el valor de la intensidad.
+     * 
      * @return valor numerico comprendido entre 0 y 100
      */
     public int getIntensidad( ){
@@ -72,6 +74,7 @@ public class Bulb {
     }
     /**
      * Consulta el valor numerico del color.
+     * 
      * @return string en mayusculas con un color en ingles.
      */
     public String getColor( ){

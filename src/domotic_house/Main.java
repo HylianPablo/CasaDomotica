@@ -24,6 +24,7 @@ public class Main {
     
     /**
      * Devuelve una referencia a la máquina de estados del sistema.
+     * 
      * @return Clase {@code LoginStateMachine} que representa a la máquina de estados del sistema.
      */
     public static LoginStateMachine getStateMachineLogin(){

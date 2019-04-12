@@ -102,10 +102,6 @@ public class Login_window extends javax.swing.JFrame {
             blind3_value.setText("Blind three: "+Integer.toString(Math.abs(model.getBlindValue(3)-100))+"% open");
         }
         
-        
-        //blind2_value.setText("Blind two: "+Integer.toString(Math.abs(model.getBlindValue(2)-100))+"% open");
-        //blind3_value.setText("Blind three: "+Integer.toString(Math.abs(model.getBlindValue(3)-100))+"% open");
-        
         // Datos bombillas
         bulb_state.setText("Configuration: " + model.getMode() );
         bulb1.setText("Bulb one: " + on_off_string(0));
@@ -307,7 +303,6 @@ public class Login_window extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(heating)
                                 .addComponent(light_button, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)

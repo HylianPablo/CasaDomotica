@@ -58,21 +58,42 @@ public class LightController {
         }
     }
     
-    
+    /**
+     * Activa la bombilla 1
+     */
     public void activate0(){
         activate(0);
     }
     
     
+    /**
+     * Activa la bombilla 2.
+     */
     public void activate1(){
         activate(1);
     }
+    
+    
+    /**
+     * Activa la bombilla 3.
+     */
     public void activate2(){
         activate(2);
     }
+    
+    
+    
+    /**
+     * Activa la bombilla 4.
+     */
     public void activate3(){
         activate(3);
     }
+    
+    
+    /**
+     * Activa la bombilla 5.
+     */
     public void activate4(){
         activate(4);
     }

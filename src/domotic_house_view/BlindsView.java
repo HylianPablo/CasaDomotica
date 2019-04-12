@@ -58,6 +58,7 @@ public class BlindsView extends javax.swing.JFrame {
     
     /**
      * Consulta el porcentaje en que está abierta la primera persiana.
+     * 
      * @return Número entero que representa el porcentaje en que está abierta la persiana.
      */
     public int getIntensity1(){
@@ -66,6 +67,7 @@ public class BlindsView extends javax.swing.JFrame {
     
     /**
      * Consulta el porcentaje en que está abierta la segunda persiana.
+     * 
      * @return Número entero que representa el porcentaje en que está abierta la persiana.
      */
     public int getIntensity2(){
@@ -74,6 +76,7 @@ public class BlindsView extends javax.swing.JFrame {
     
     /**
      * Consulta el porcentaje en que está abierta la tercera persiana.
+     * 
      * @return Número entero que representa el porcentaje en que está abierta la persiana.
      */
     public int getIntensity3(){

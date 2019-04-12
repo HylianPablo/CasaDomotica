@@ -19,7 +19,7 @@ import java.awt.Color;
 public class HeatingView extends javax.swing.JFrame {
     CasaDomotica model;
     HeatingController controlador;
-    
+    private static final String IMAGE_PATH = "/domotic_house_view/images/";
     
     /**
      * Constructor de la vista del termostato.
@@ -34,10 +34,10 @@ public class HeatingView extends javax.swing.JFrame {
         temperature_text.setText(Integer.toString(model.getHeating()));
         Heating_slider.setValue(model.getHeating());
         temperature_text.setForeground(Color.GREEN);
-        exit_heating.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/back.png")));
-        Leaf_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/leaf.png")));
-        Cold_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/snow.png")));
-        Heat_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/domotic_house_view/images/sun1.png")));
+        exit_heating.setIcon(new javax.swing.ImageIcon(getClass().getResource(IMAGE_PATH + "back.png")));
+        Leaf_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource(IMAGE_PATH + "leaf.png")));
+        Cold_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource(IMAGE_PATH + "snow.png")));
+        Heat_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource(IMAGE_PATH + "sun1.png")));
         actInt(model.getHeating());
     }
     
@@ -50,9 +50,9 @@ public class HeatingView extends javax.swing.JFrame {
      */
     public void actInt(int n){
         if(n==20){
-            Leaf_icon.setVisible(true);
+            Leaf_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource(IMAGE_PATH + "leaf.png")));
         }else{
-            Leaf_icon.setVisible(false);
+            Leaf_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource(IMAGE_PATH + "no_leaf.png")));
         }
         temperature_text.setText(Integer.toString(n)+"º C");
         if(n>=10 && n<15){
